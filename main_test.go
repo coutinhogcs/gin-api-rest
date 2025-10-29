@@ -67,3 +67,11 @@ func TestAtualizaAlunoPorID(t *testing.T) {
 	R.ServeHTTP(resp, req)
 	assert.Equal(t, http.StatusOK, resp.Code)
 }
+
+func TestPesquisaAlunoPorCpf(t *testing.T) {
+	req, _ := http.NewRequest("GET", "/alunos/cpf/123", nil)
+	resp := httptest.NewRecorder()
+	R.ServeHTTP(resp, req)
+	assert.Equal(t, http.StatusOK, resp.Code)
+
+}
